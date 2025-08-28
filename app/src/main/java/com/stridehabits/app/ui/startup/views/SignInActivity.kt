@@ -6,25 +6,25 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.stridehabits.app.databinding.ActivityStartBinding
-import com.stridehabits.app.ui.startup.viewmodels.StartViewModel
+import com.stridehabits.app.databinding.ActivitySignInBinding
+import com.stridehabits.app.ui.startup.viewmodels.SignInViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StartActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
     companion object {
-        private const val TAG = "StartActivity"
+        private const val TAG = "SignInActivity"
     }
 
 
 // --- Fields
 
 
-    private lateinit var binds: ActivityStartBinding
-    private val model: StartViewModel by viewModels()
+    private lateinit var binds: ActivitySignInBinding
+    private val model: SignInViewModel by viewModels()
 
 
-// --- Lifecycle    
+// --- Lifecycle
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +33,13 @@ class StartActivity : AppCompatActivity() {
         setupBindings()
         setupLayoutUi()
     }
-    
+
 
 // --- UI
 
 
     private fun setupBindings() {
-        binds = ActivityStartBinding.inflate(layoutInflater)
+        binds = ActivitySignInBinding.inflate(layoutInflater)
     }
 
 

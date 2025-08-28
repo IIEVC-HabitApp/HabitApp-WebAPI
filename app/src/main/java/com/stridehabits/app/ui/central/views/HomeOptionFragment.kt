@@ -1,0 +1,53 @@
+package com.stridehabits.app.ui.central.views
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import com.stridehabits.app.databinding.FragmentHomeOptionBinding
+import com.stridehabits.app.ui.central.viewmodels.HomeOptionViewModel
+import com.stridehabits.app.ui.central.viewmodels.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class HomeOptionFragment : Fragment() {
+    companion object {
+        private const val TAG = "HomeOptionFragment"
+    }
+    
+    
+// --- Fields
+    
+    
+    private lateinit var binds: FragmentHomeOptionBinding
+    private val sharedModel: HomeViewModel by activityViewModels()
+    private val activeModel: HomeOptionViewModel by viewModels()
+    
+    
+// --- Lifecycle
+    
+    
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View = createBindings(inflater, container)
+    
+    
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // Setup initial startup logic
+    }
+    
+    
+// --- UI
+    
+    
+    private fun createBindings(
+        inflater: LayoutInflater, container: ViewGroup?
+    ): View {
+        binds = FragmentHomeOptionBinding.inflate(inflater, container, false)
+        return binds.root
+    }
+}

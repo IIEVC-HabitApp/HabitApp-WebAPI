@@ -13,6 +13,24 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Stride">
         <activity
+                android:name=".ui.central.views.HabitViewerActivity"
+                android:exported="false" />
+        <activity
+                android:name=".ui.central.views.HomeActivity"
+                android:exported="false" />
+        <activity
+                android:name=".ui.startup.views.LockActivity"
+                android:exported="false" />
+        <activity
+                android:name=".ui.startup.views.ForgotCredentialsActivity"
+                android:exported="false" />
+        <activity
+                android:name=".ui.startup.views.SignInActivity"
+                android:exported="false" />
+        <activity
+                android:name=".ui.startup.views.SignUpActivity"
+                android:exported="false" />
+        <activity
                 android:name=".ui.startup.views.StartActivity"
                 android:exported="true">
             <intent-filter>

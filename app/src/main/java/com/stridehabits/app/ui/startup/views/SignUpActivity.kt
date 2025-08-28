@@ -6,43 +6,44 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.stridehabits.app.databinding.ActivityStartBinding
-import com.stridehabits.app.ui.startup.viewmodels.StartViewModel
+import com.stridehabits.app.R
+import com.stridehabits.app.databinding.ActivitySignUpBinding
+import com.stridehabits.app.ui.startup.viewmodels.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StartActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
     companion object {
-        private const val TAG = "StartActivity"
+        private const val TAG = "SignUpActivity"
     }
-
-
+    
+    
 // --- Fields
-
-
-    private lateinit var binds: ActivityStartBinding
-    private val model: StartViewModel by viewModels()
-
-
-// --- Lifecycle    
-
-
+    
+    
+    private lateinit var binds: ActivitySignUpBinding
+    private val model: SignUpViewModel by viewModels()
+    
+    
+// --- Lifecycle
+    
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        
         setupBindings()
         setupLayoutUi()
     }
     
-
-// --- UI
-
-
+    
+// --- UI 
+    
+    
     private fun setupBindings() {
-        binds = ActivityStartBinding.inflate(layoutInflater)
+        binds = ActivitySignUpBinding.inflate(layoutInflater)
     }
-
-
+    
+    
     private fun setupLayoutUi() {
         enableEdgeToEdge()
         setContentView(binds.root)

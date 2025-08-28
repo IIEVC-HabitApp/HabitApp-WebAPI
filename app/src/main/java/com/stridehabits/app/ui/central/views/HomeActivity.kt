@@ -1,4 +1,4 @@
-package com.stridehabits.app.ui.startup.views
+package com.stridehabits.app.ui.central.views
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,25 +6,25 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.stridehabits.app.databinding.ActivityStartBinding
-import com.stridehabits.app.ui.startup.viewmodels.StartViewModel
+import com.stridehabits.app.databinding.ActivityHomeBinding
+import com.stridehabits.app.ui.central.viewmodels.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StartActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     companion object {
-        private const val TAG = "StartActivity"
+        private const val TAG = "HomeActivity"
     }
 
 
 // --- Fields
 
 
-    private lateinit var binds: ActivityStartBinding
-    private val model: StartViewModel by viewModels()
+    private lateinit var binds: ActivityHomeBinding
+    private val model: HomeViewModel by viewModels()
 
 
-// --- Lifecycle    
+// --- Lifecycle
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,13 +33,13 @@ class StartActivity : AppCompatActivity() {
         setupBindings()
         setupLayoutUi()
     }
-    
+
 
 // --- UI
 
 
     private fun setupBindings() {
-        binds = ActivityStartBinding.inflate(layoutInflater)
+        binds = ActivityHomeBinding.inflate(layoutInflater)
     }
 
 
