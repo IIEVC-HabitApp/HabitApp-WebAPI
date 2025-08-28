@@ -6,9 +6,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.stridehabits.app.databinding.ActivityForgotCredentialsBinding
 import com.stridehabits.app.ui.startup.viewmodels.ForgotCredentialsViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ForgotCredentialsActivity : AppCompatActivity() {
@@ -32,10 +36,25 @@ class ForgotCredentialsActivity : AppCompatActivity() {
 
         setupBindings()
         setupLayoutUi()
+        setupForm()
     }
 
 
 // --- UI
+
+
+    private fun setupForm() {
+        // TODO: Collect text updates and call listeners
+
+        // Error UI
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                model.form.state.collect { state ->
+                    // TODO: Update error states in the UI
+                }
+            }
+        }
+    }
 
 
     private fun setupBindings() {

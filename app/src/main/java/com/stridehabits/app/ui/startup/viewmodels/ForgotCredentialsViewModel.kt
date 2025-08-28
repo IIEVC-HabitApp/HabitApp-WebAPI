@@ -9,4 +9,10 @@ class ForgotCredentialsViewModel @Inject constructor() : ViewModel() {
     companion object {
         private const val TAG = "ForgotCredentialsViewModel"
     }
+
+
+// --- Fields
+
+
+    val form = ForgotCredentialsFormViewModel()
 }

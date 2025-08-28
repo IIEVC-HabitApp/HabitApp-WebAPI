@@ -9,4 +9,10 @@ class SignUpViewModel @Inject constructor() : ViewModel() {
     companion object {
         private const val TAG = "SignUpViewModel"
     }
+
+
+// --- Fields
+
+
+    val form = SignUpFormViewModel()
 }
